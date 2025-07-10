@@ -1,0 +1,135 @@
+/* RoomsPreviewSection.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .rooms-preview-section {
+    background-color: var(--secondary-light-gray); /* Light gray background for this section */
+    padding: 6rem 0; /* Top and bottom padding */
+  }
+  
+  .rooms-preview-container {
+    max-width: 1200px; /* Match other section container widths */
+    margin: 0 auto; /* Center the container */
+    padding: 0 2rem; /* Horizontal padding */
+    text-align: center; /* Center main content */
+  }
+  
+  /* --- Section Title and Description (reusing general styles or defining specific ones) --- */
+  .section-title { /* You can reuse this class from WhyChooseUsSection.css if you want */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .section-description { /* You can reuse this class from WhyChooseUsSection.css if you want */
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--text-dark-gray);
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.7;
+  }
+  
+  /* --- Room Cards Grid --- */
+  .room-cards-grid {
+    display: grid;
+    /* Responsive grid:
+       - Default: 1 column on very small screens
+       - From 768px: 2 columns
+       - From 1024px: 3 columns
+    */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible columns, min width 300px */
+    gap: 2.5rem; /* Space between room cards */
+    margin-top: 2rem;
+    justify-content: center; /* Center cards if they don't fill the row */
+  }
+  
+  /* --- Call to Action for More Rooms --- */
+  .rooms-cta {
+    margin-top: 4rem; /* Space above the button */
+    text-align: center; /* Center the button */
+  }
+  
+  .rooms-view-all-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Allows padding and transformation */
+    border: none;
+    cursor: pointer;
+  }
+  
+  .rooms-view-all-button:hover {
+    background-color: #1D4ED8; /* Darker blue on hover */
+    transform: translateY(-3px);
+  }
+  
+  /* --- Mobile Responsiveness --- */
+  @media (max-width: 1024px) {
+    .section-title {
+      font-size: 2.4rem;
+    }
+    .section-description {
+      font-size: 1.05rem;
+    }
+    .room-cards-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust columns for tablets */
+      gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rooms-preview-section {
+      padding: 4rem 0;
+    }
+    .rooms-preview-container {
+      padding: 0 1.5rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section-description {
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .room-cards-grid {
+      grid-template-columns: 1fr; /* Stack cards vertically on mobile */
+      gap: 1.5rem;
+    }
+    .rooms-view-all-button {
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .section-description {
+      font-size: 0.9rem;
+    }
+    .rooms-view-all-button {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }

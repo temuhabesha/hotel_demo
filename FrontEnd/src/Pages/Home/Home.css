@@ -1,0 +1,123 @@
+/* src/components/Header.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #1E3A8A;     /* Deep Blue */
+  --accent-color: #FACC15;      /* Yellow */
+  --text-color: #F8FAFC;        /* Light Gray */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--text-color);
+}
+
+/* Header Container */
+.header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Inside Wrapper */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav a:hover {
+  color: var(--accent-color);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 70px;
+    right: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    gap: 1rem;
+    text-align: right;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

@@ -1,0 +1,160 @@
+/* GalleryPreviewSection.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFA; /* Slightly lighter background */
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .gallery-preview-section {
+    background-color: var(--background-light-gray); /* Light background for this section */
+    padding: 6rem 0; /* Top and bottom padding */
+  }
+  
+  .gallery-preview-container {
+    max-width: 1200px; /* Match other section container widths */
+    margin: 0 auto; /* Center the container */
+    padding: 0 2rem; /* Horizontal padding */
+    text-align: center; /* Center main content */
+  }
+  
+  /* --- Section Title --- */
+  .section-title { /* Reusing styles from previous sections */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 2.5rem; /* More space below title */
+    line-height: 1.2;
+  }
+  
+  /* --- Image Grid --- */
+  .gallery-grid {
+    display: grid;
+    /* Responsive grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible columns */
+    gap: 1.5rem; /* Space between images */
+    margin-bottom: 3rem; /* Space below grid before CTA */
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden; /* For rounded corners and hover zoom */
+    border-radius: 0.75rem; /* Rounded corners for images */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gallery-item::before { /* Placeholder for aspect ratio */
+    content: '';
+    display: block;
+    padding-top: 75%; /* 4:3 aspect ratio */
+  }
+  
+  .gallery-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area */
+    transition: transform 0.4s ease; /* Smooth zoom */
+  }
+  
+  .gallery-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Start transparent */
+    transition: background-color 0.3s ease;
+    z-index: 1; /* Above image, below potential text */
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+  }
+  
+  .gallery-item:hover .gallery-image {
+    transform: scale(1.08); /* More noticeable zoom */
+  }
+  
+  .gallery-item:hover .gallery-item-overlay {
+    background-color: rgba(0, 0, 0, 0.2); /* Darken overlay on hover */
+  }
+  
+  
+  /* --- Call to Action Button --- */
+  .gallery-cta {
+    margin-top: 2rem; /* Space above the button */
+    text-align: center;
+  }
+  
+  .gallery-view-all-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .gallery-view-all-button:hover {
+    background-color: #1D4ED8;
+    transform: translateY(-3px);
+  }
+  
+  /* --- Mobile Responsiveness --- */
+  @media (max-width: 1024px) {
+    .section-title {
+      font-size: 2.4rem;
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for tablets */
+      gap: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-preview-section {
+      padding: 4rem 0;
+    }
+    .gallery-preview-container {
+      padding: 0 1.5rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr; /* Stack images vertically on mobile */
+      gap: 1rem;
+    }
+    .gallery-view-all-button {
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .gallery-view-all-button {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }

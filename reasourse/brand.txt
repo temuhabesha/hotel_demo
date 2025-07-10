@@ -1,0 +1,38 @@
+ Brand Colors:
+Color	Hex Code	Usage
+Primary	#1E3A8A	Deep Blue – for headers, CTA buttons
+Accent	#FACC15	Yellow – for highlights, icons
+Background	#F8FAFC	Very light gray – main background
+Text	#1F2937	Dark Gray – for content
+Secondary	#E5E7EB	Light gray – cards, inputs
+
+✅ Typography:
+Font Name	Use Case	Link
+Poppins	Titles & Headings	Google Fonts
+Inter	Body & Buttons	Google Fonts
+
+📦 You can use this CDN in your index.html:
+
+html
+Copy
+Edit
+<link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+Or import it in your Tailwind config if you use Tailwind.
+
+✅ Button Styles (Tailwind CSS):
+jsx
+Copy
+Edit
+<button className="bg-[#1E3A8A] text-white px-4 py-2 rounded-lg hover:bg-[#1D4ED8] transition">
+  Book Now
+</button>
+✅ UI Mood:
+Clean
+
+Spacious
+
+Friendly
+
+Touristy / Travel-oriented
+
+Mobile responsive

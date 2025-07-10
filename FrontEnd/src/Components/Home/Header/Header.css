@@ -1,0 +1,237 @@
+/* Header.css */
+
+/* --- Brand Colors (as CSS Variables for easy access) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF; /* Added for text on primary blue */
+  }
+  
+  /* --- Typography (Ensure you've linked Google Fonts in public/index.html) --- */
+  /*
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  */
+  body {
+    font-family: 'Inter', sans-serif; /* Default body font */
+  }
+  
+  /* --- Header Container --- */
+  .header {
+    position: fixed; /* Makes the header stick to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--background-light-gray); /* Very light gray background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensures header is on top of other content */
+    padding: 1rem 0; /* Vertical padding */
+  }
+  
+  .header-container {
+    max-width: 1200px; /* Max width for content within the header */
+    margin: 0 auto; /* Center the container */
+    padding: 0 2rem; /* Horizontal padding */
+    display: flex;
+    justify-content: space-between; /* Space out logo, nav, cta */
+    align-items: center; /* Vertically align items */
+  }
+  
+  /* --- Logo Styling --- */
+  .header-logo {
+    font-family: 'Poppins', sans-serif; /* Poppins for titles/logo */
+    font-weight: 600; /* Semi-bold */
+    font-size: 1.8rem;
+    color: var(--primary-blue); /* Deep Blue color for logo */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Indicate it's clickable */
+    transition: color 0.3s ease;
+  }
+  
+  .header-logo:hover {
+    color: var(--accent-yellow); /* Yellow on hover */
+  }
+  
+  .logo-img { /* If you use an image logo */
+    height: 40px; /* Adjust as needed */
+    width: auto;
+  }
+  
+  /* --- Navigation Menu --- */
+  .header-nav {
+    display: flex; /* Display links in a row */
+    gap: 2.5rem; /* Space between nav items */
+  }
+  
+  .nav-link {
+    font-family: 'Inter', sans-serif; /* Inter for body/buttons */
+    font-weight: 400; /* Regular weight */
+    font-size: 1.05rem;
+    color: var(--text-dark-gray); /* Dark Gray text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease;
+    cursor: pointer; /* Indicate it's clickable for smooth scroll */
+  }
+  
+  .nav-link:hover {
+    color: var(--primary-blue); /* Deep Blue on hover */
+  }
+  
+  /* --- CTA Buttons Container --- */
+  .header-cta {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+  }
+  
+  /* --- WhatsApp Button --- */
+  .whatsapp-button {
+    background-color: #25D366; /* WhatsApp Green */
+    color: var(--white);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem; /* Rounded corners */
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none; /* No border for solid button */
+    cursor: pointer;
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #1DA851; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift */
+  }
+  
+  /* --- Book Now Button --- */
+  .book-now-button {
+    background-color: var(--primary-blue); /* Deep Blue from brand */
+    color: var(--white);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex; /* Ensure it behaves like a flex item for centering text */
+    align-items: center;
+    justify-content: center;
+    border: none; /* No border for solid button */
+    cursor: pointer;
+  }
+  
+  .book-now-button:hover {
+    background-color: #1D4ED8; /* Slightly darker blue on hover (as per Tailwind example) */
+    transform: translateY(-2px); /* Slight lift */
+  }
+  
+  /* --- Mobile Menu Toggle (Hamburger Icon) --- */
+  .menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--primary-blue);
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  .menu-toggle svg { /* Styling for the SVG icons */
+    width: 28px;
+    height: 28px;
+  }
+  
+  /* --- Mobile Responsiveness --- */
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 0 1.5rem; /* Reduce padding on smaller screens */
+    }
+  
+    .header-nav {
+      display: none; /* Hide navigation links by default on mobile */
+      flex-direction: column; /* Stack links vertically */
+      position: absolute;
+      top: 100%; /* Position below the header */
+      left: 0;
+      width: 100%;
+      background-color: var(--background-light-gray);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      padding: 1rem 0;
+      border-top: 1px solid var(--secondary-light-gray);
+      z-index: 999; /* Below header, above main content */
+    }
+  
+    .header-nav.open {
+      display: flex; /* Show navigation when open */
+    }
+  
+    .nav-link {
+      padding: 0.8rem 2rem; /* More padding for touch targets */
+      text-align: center;
+      width: 100%;
+      border-bottom: 1px solid var(--secondary-light-gray); /* Separator */
+    }
+  
+    .nav-link:last-child {
+      border-bottom: none; /* No border on the last link */
+    }
+  
+    .menu-toggle {
+      display: block; /* Show hamburger icon on mobile */
+    }
+  
+    .header-cta {
+      display: none; /* Hide CTA buttons by default on mobile */
+      /* You might want to move these inside the mobile menu or simplify them for small screens */
+    }
+  
+    /* Optional: Show CTA buttons as full-width within the mobile menu if open */
+    .header-nav.open + .header-cta {
+       display: flex; /* Show CTA buttons right after nav if menu is open */
+       flex-direction: column;
+       width: 100%;
+       padding: 1rem 1.5rem;
+       gap: 0.8rem;
+       position: absolute; /* Position below the navigation */
+       top: calc(100% + var(--nav-height, 0px)); /* Adjust this if nav has dynamic height */
+       left: 0;
+       background-color: var(--background-light-gray);
+       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+       border-top: 1px solid var(--secondary-light-gray);
+    }
+  
+    .header-nav.open + .header-cta .whatsapp-button,
+    .header-nav.open + .header-cta .book-now-button {
+      width: 100%; /* Make buttons full width in mobile menu */
+    }
+  
+    /* Adjustments to allow CTA buttons to be hidden/shown correctly on mobile */
+    .header-container {
+      position: relative; /* For absolute positioning of nav/cta */
+    }
+  }
+  
+  /* Adjustments for even smaller screens */
+  @media (max-width: 480px) {
+    .header-container {
+      padding: 0 1rem;
+    }
+    .header-logo {
+      font-size: 1.6rem;
+    }
+    .menu-toggle svg {
+      width: 24px;
+      height: 24px;
+    }
+    .whatsapp-button,
+    .book-now-button {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+  }

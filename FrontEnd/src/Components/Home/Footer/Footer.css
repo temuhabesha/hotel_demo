@@ -1,0 +1,190 @@
+/* Footer.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+    --dark-blue: #172B6B; /* A slightly darker blue for the footer background */
+  }
+  
+  .footer-section {
+    background-color: var(--dark-blue); /* Darker blue for a distinct footer */
+    color: var(--white);
+    padding: 4rem 0 2rem 0; /* Top, horizontal, bottom padding */
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid columns */
+    gap: 2.5rem; /* Space between columns */
+    margin-bottom: 3rem; /* Space above copyright */
+    text-align: left; /* Align text within columns */
+  }
+  
+  .footer-col {
+    /* Basic styling for each column */
+  }
+  
+  .footer-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: var(--accent-yellow); /* Accent yellow for headings */
+    margin-bottom: 1.2rem;
+  }
+  
+  .footer-about .footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.8; /* Slightly less prominent */
+  }
+  
+  /* --- Quick Links Styling --- */
+  .footer-quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-quick-links li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-link {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    font-size: 0.95rem;
+  }
+  
+  .footer-link:hover {
+    color: var(--accent-yellow);
+    opacity: 1;
+  }
+  
+  /* --- Contact Info Styling --- */
+  .footer-contact-info p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+  
+  .footer-contact-link {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: color 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .footer-contact-link:hover {
+    color: var(--accent-yellow);
+    opacity: 1;
+  }
+  
+  .footer-address {
+      opacity: 0.9;
+  }
+  
+  /* --- Social Icons Styling --- */
+  .social-icons {
+    display: flex;
+    gap: 1rem; /* Space between icons */
+    margin-top: 0.8rem;
+  }
+  
+  .social-icon {
+    font-size: 1.8rem; /* Size of the icon/text */
+    color: var(--white);
+    opacity: 0.9;
+    transition: color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+    text-decoration: none; /* Remove underline for text icons */
+  }
+  
+  .social-icon:hover {
+    color: var(--accent-yellow);
+    transform: translateY(-3px); /* Lift effect */
+    opacity: 1;
+  }
+  
+  /* --- Copyright Styling --- */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator line */
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .copyright-text {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7); /* Lighter for copyright */
+  }
+  
+  .nilehorn-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nilehorn-link:hover {
+    color: var(--accent-yellow);
+    text-decoration: underline;
+  }
+  
+  /* --- Mobile Responsiveness --- */
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust columns for tablets */
+      gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-section {
+      padding: 3rem 0 1.5rem 0;
+    }
+    .footer-container {
+      padding: 0 1.5rem;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr; /* Stack columns vertically on mobile */
+      text-align: center; /* Center content in stacked columns */
+      gap: 2.5rem;
+    }
+    .footer-heading {
+      margin-bottom: 0.8rem;
+    }
+    .social-icons {
+      justify-content: center; /* Center social icons on mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-heading {
+      font-size: 1.2rem;
+    }
+    .footer-link,
+    .footer-contact-info p,
+    .social-icon {
+      font-size: 0.9rem;
+    }
+    .social-icon {
+      font-size: 1.6rem;
+    }
+    .copyright-text {
+      font-size: 0.8rem;
+    }
+  }

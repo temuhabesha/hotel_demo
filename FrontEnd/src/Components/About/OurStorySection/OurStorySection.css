@@ -1,0 +1,233 @@
+/* OurStorySection.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+  --primary-blue: #1E3A8A;
+  --accent-yellow: #FACC15;
+  --background-light-gray: #F8FAFC;
+  --text-dark-gray: #1F2937;
+  --secondary-light-gray: #E5E7EB;
+  --white: #FFFFFF;
+}
+
+.our-story-section {
+  background-color: var(--white); /* White background for clean text readability */
+  padding: 6rem 0;
+}
+
+.our-story-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center; /* Center the main title */
+}
+
+.section-title { /* Reusing existing section title style */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+  color: var(--primary-blue);
+  margin-bottom: 3.5rem;
+  line-height: 1.2;
+}
+
+.story-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns: text and image */
+  gap: 3rem; /* Space between columns */
+  align-items: flex-start; /* Align content to the top of each column */
+  text-align: left; /* Align text within story column */
+}
+
+.story-text {
+  /* No specific styles needed here other than default text */
+}
+
+.story-text p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-dark-gray);
+  margin-bottom: 1.2rem;
+}
+
+.story-values {
+  background-color: var(--background-light-gray); /* Light gray background for values box */
+  border-left: 5px solid var(--accent-yellow); /* Accent border */
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.story-values h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  text-align: left; /* Ensure heading is left-aligned within its box */
+}
+
+.story-values ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.story-values li {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark-gray);
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+
+.story-values li::before {
+  content: '→'; /* Custom bullet point */
+  color: var(--primary-blue);
+  font-weight: bold;
+  display: inline-block;
+  width: 1.5em; /* Space for the arrow */
+  margin-left: -1.5em;
+}
+
+.story-vision {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600; /* Bolder for vision statement */
+  font-size: 1.1rem;
+  color: var(--primary-blue);
+  margin-top: 2rem;
+  line-height: 1.6;
+}
+
+/* --- Founder Quote Styling --- */
+.founder-quote {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: var(--primary-blue);
+  margin: 3rem 0;
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--secondary-light-gray);
+  border-bottom: 2px solid var(--secondary-light-gray);
+  position: relative;
+  text-align: center;
+}
+
+.founder-quote::before {
+  content: "“";
+  font-family: serif; /* Use a classic serif font for quotes */
+  font-size: 4rem;
+  color: var(--accent-yellow);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.founder-quote cite {
+  display: block;
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--text-dark-gray);
+}
+
+/* --- Story Image Styling --- */
+.story-image-container {
+  flex-shrink: 0; /* Prevent image from shrinking too much */
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  align-self: center; /* Vertically center the image in its column */
+  position: sticky; /* Stick the image while scrolling text */
+  top: 80px; /* Adjust based on header height */
+  max-height: 500px; /* Limit image height */
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+  .section-title {
+    font-size: 2.4rem;
+  }
+  .story-content-grid {
+    grid-template-columns: 1fr; /* Stack columns on tablets */
+    gap: 2.5rem;
+  }
+  .story-image-container {
+    max-height: 400px; /* Adjust max height for stacked image */
+    position: static; /* Remove sticky position on smaller screens */
+  }
+  .story-values, .founder-quote {
+    margin: 1.5rem 0; /* Adjust margins */
+  }
+}
+
+@media (max-width: 768px) {
+  .our-story-section {
+    padding: 4rem 0;
+  }
+  .our-story-container {
+    padding: 0 1.5rem;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .story-text p {
+    font-size: 1rem;
+  }
+  .story-values h3 {
+    font-size: 1.2rem;
+  }
+  .story-values li {
+    font-size: 0.95rem;
+  }
+  .story-vision {
+    font-size: 1rem;
+  }
+  .founder-quote {
+    font-size: 1.1rem;
+    padding: 1rem 0;
+  }
+  .founder-quote::before {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .story-text p {
+    font-size: 0.95rem;
+  }
+  .story-values {
+    padding: 1rem 1.5rem;
+  }
+  .story-values h3 {
+    font-size: 1.1rem;
+  }
+  .story-values li {
+    font-size: 0.9rem;
+  }
+  .founder-quote {
+    font-size: 1rem;
+  }
+  .founder-quote::before {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,75 @@
+/* TestimonialCard.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .testimonial-card {
+    background-color: var(--white); /* White background for the card */
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Push name to bottom */
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  }
+  
+  .testimonial-stars {
+    font-size: 1.8rem;
+    color: var(--accent-yellow); /* Accent yellow for stars */
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em; /* Space out stars a bit */
+  }
+  
+  .testimonial-message {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: var(--text-dark-gray);
+    line-height: 1.7;
+    flex-grow: 1; /* Allows message to take up available space */
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonial-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    margin-top: auto; /* Pushes name to the bottom of the card */
+  }
+  
+  /* --- Mobile Responsiveness for Testimonial Card --- */
+  @media (max-width: 768px) {
+    .testimonial-card {
+      padding: 2rem;
+    }
+    .testimonial-stars {
+      font-size: 1.5rem;
+    }
+    .testimonial-message {
+      font-size: 1rem;
+    }
+    .testimonial-name {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-card {
+      padding: 1.5rem;
+    }
+  }

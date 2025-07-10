@@ -1,0 +1,156 @@
+/* CommonAmenitiesSection.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .common-amenities-section {
+    background-color: var(--white); /* White background to stand out from RoomCardsGrid's light gray */
+    padding: 5rem 0; /* Vertical padding */
+    text-align: center; /* Centers title, subtitle, and grid content */
+  }
+  
+  .common-amenities-container {
+    max-width: 1200px; /* Consistent max width */
+    margin: 0 auto;
+    padding: 0 2rem; /* Horizontal padding */
+  }
+  
+  /* Reusing consistent section title style from RoomCardsGrid */
+  .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    color: var(--text-dark-gray);
+    margin-bottom: 3rem; /* More space below subtitle */
+    max-width: 800px; /* Limit subtitle width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  
+  .amenities-grid {
+    display: grid;
+    /* Auto-fit for flexible column count based on item size */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem; /* Space between amenity items */
+    justify-content: center; /* Centers items in the grid */
+    align-items: start; /* Aligns items to the start of their grid cell */
+  }
+  
+  .amenity-item {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center content horizontally within the item */
+    padding: 1.5rem;
+    background-color: var(--background-light-gray); /* Light gray background for each item */
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensures all cards are same height if content varies slightly */
+  }
+  
+  .amenity-item:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft shadow on hover */
+  }
+  
+  .amenity-icon {
+    font-size: 3.5rem; /* Large icon size for prominence */
+    margin-bottom: 0.8rem;
+    line-height: 1; /* Prevents extra line height for icons */
+    /* If using SVG/PNG, you'd replace font-size with width/height */
+    /* e.g., width: 60px; height: 60px; */
+  }
+  
+  .amenity-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--text-dark-gray);
+    margin: 0; /* Remove default paragraph margins */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 1024px) {
+    .section-title {
+      font-size: 2.4rem;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+    .amenities-grid {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+    .amenity-icon {
+      font-size: 3rem;
+    }
+    .amenity-name {
+      font-size: 1.05rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .common-amenities-section {
+      padding: 4rem 0;
+    }
+    .common-amenities-container {
+      padding: 0 1.5rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    .amenities-grid {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Allow smaller items on tablet */
+      gap: 1rem;
+    }
+    .amenity-icon {
+      font-size: 2.5rem;
+    }
+    .amenity-name {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.8rem;
+    }
+    .section-subtitle {
+      font-size: 0.95rem;
+    }
+    .amenities-grid {
+      grid-template-columns: 1fr 1fr; /* Two columns on mobile */
+      gap: 0.8rem;
+    }
+    .amenity-item {
+      padding: 1rem;
+    }
+    .amenity-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .amenity-name {
+      font-size: 0.9rem;
+    }
+  }

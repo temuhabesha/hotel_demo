@@ -1,0 +1,308 @@
+/* RoomDetailsModal.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .modal-overlay {
+    position: fixed; /* Fixes the modal overlay to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    display: flex;
+    align-items: center; /* Centers modal vertically */
+    justify-content: center; /* Centers modal horizontally */
+    z-index: 1000; /* High z-index to appear on top of other content */
+    backdrop-filter: blur(5px); /* Adds a subtle blur to the background */
+  }
+  
+  .modal-content {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Prominent shadow for the modal */
+    max-width: 90%; /* Max width relative to viewport */
+    max-height: 90vh; /* Max height relative to viewport for scrollability */
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+    position: relative;
+    transform: scale(0.95); /* Initial scale for a subtle open animation */
+    animation: modal-open 0.3s forwards ease-out; /* Animation for opening */
+  }
+  
+  /* Keyframe animation for modal opening */
+  @keyframes modal-open {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .modal-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem; /* Large 'X' icon */
+    color: var(--text-dark-gray);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .modal-close-button:hover {
+    color: var(--primary-blue); /* Color change on hover */
+  }
+  
+  .modal-room-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* --- Image Carousel Styling --- */
+  .modal-image-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Max width for consistency */
+    margin: 0 auto 2rem auto; /* Center with margin below */
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for the carousel */
+  }
+  
+  .carousel-main-image {
+    width: 100%;
+    height: 400px; /* Fixed height for the main display image */
+    object-fit: cover; /* Ensures image fills without distortion */
+    display: block; /* Removes extra space below image */
+  }
+  
+  .carousel-nav-button {
+    position: absolute;
+    top: 50%; /* Vertically centers buttons */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 0.8rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10; /* Ensures buttons are above image */
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+  }
+  
+  .carousel-nav-button.prev {
+    left: 1rem;
+  }
+  
+  .carousel-nav-button.next {
+    right: 1rem;
+  }
+  
+  .carousel-thumbnails {
+    display: flex;
+    justify-content: center; /* Centers thumbnails below the main image */
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    background-color: rgba(0, 0, 0, 0.1); /* Light background for the thumbnail strip */
+  }
+  
+  .thumbnail-image {
+    width: 80px; /* Fixed width for thumbnails */
+    height: 60px; /* Fixed height for thumbnails */
+    object-fit: cover;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    border: 2px solid transparent; /* Transparent border by default */
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .thumbnail-image.active {
+    border-color: var(--accent-yellow); /* Accent border for active thumbnail */
+    transform: scale(1.05); /* Slight scale for active thumbnail */
+  }
+  
+  /* --- Details Grid Styling --- */
+  .modal-details-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Description column wider than amenities */
+    gap: 2.5rem; /* Space between columns */
+    margin-bottom: 2rem;
+  }
+  
+  .modal-description h3,
+  .modal-amenities h3,
+  .modal-policies h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+  }
+  
+  .modal-description p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark-gray);
+  }
+  
+  .modal-amenities ul {
+    list-style: none; /* Removes default list bullets */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .modal-amenities li {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark-gray);
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+  }
+  
+  .modal-amenities li strong {
+    color: var(--primary-blue); /* Highlights titles like Price, Occupancy */
+  }
+  
+  /* --- Policies Styling --- */
+  .modal-policies {
+    margin-bottom: 2.5rem;
+  }
+  .modal-policies p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark-gray);
+  }
+  
+  /* --- CTA Button Styling --- */
+  .modal-cta {
+    text-align: center;
+  }
+  
+  .modal-book-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none; /* For react-scroll Link */
+    display: inline-block; /* Allows padding and transitions to work */
+  }
+  
+  .modal-book-button:hover {
+    background-color: #1D4ED8; /* Slightly lighter blue on hover */
+    transform: translateY(-3px); /* Lifts button on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 992px) {
+    .modal-content {
+      max-width: 95%; /* Wider on smaller desktops/tablets */
+      padding: 2rem;
+    }
+    .modal-room-name {
+      font-size: 2.2rem;
+    }
+    .carousel-main-image {
+      height: 350px; /* Adjust image height */
+    }
+    .modal-details-grid {
+      grid-template-columns: 1fr; /* Stack columns vertically on tablets */
+      gap: 2rem;
+    }
+    .modal-description h3, .modal-amenities h3, .modal-policies h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modal-content {
+      padding: 1.5rem;
+    }
+    .modal-room-name {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .carousel-main-image {
+      height: 280px;
+    }
+    .carousel-nav-button {
+      font-size: 1.2rem;
+      padding: 0.3rem 0.6rem;
+    }
+    .carousel-thumbnails {
+      gap: 0.3rem;
+      padding: 0.3rem 0;
+    }
+    .thumbnail-image {
+      width: 60px;
+      height: 45px;
+    }
+    .modal-description p, .modal-amenities li, .modal-policies p {
+      font-size: 0.95rem;
+    }
+    .modal-book-button {
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal-content {
+      max-width: 100%; /* Full width on very small screens */
+      margin: 0.5rem; /* Small margin from edges */
+      padding: 1rem;
+    }
+    .modal-room-name {
+      font-size: 1.5rem;
+    }
+    .carousel-main-image {
+      height: 200px;
+    }
+    .carousel-nav-button {
+      font-size: 1rem;
+      padding: 0.2rem 0.4rem;
+    }
+    .thumbnail-image {
+      width: 45px;
+      height: 30px;
+    }
+    .modal-description h3, .modal-amenities h3, .modal-policies h3 {
+      font-size: 1.2rem;
+    }
+    .modal-description p, .modal-amenities li, .modal-policies p {
+      font-size: 0.9rem;
+    }
+    .modal-book-button {
+      font-size: 0.95rem;
+      padding: 0.8rem 1.5rem;
+    }
+  }

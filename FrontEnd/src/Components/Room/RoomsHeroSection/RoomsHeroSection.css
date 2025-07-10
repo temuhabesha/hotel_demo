@@ -1,0 +1,101 @@
+/* RoomsHeroSection.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .rooms-hero-section {
+    position: relative; /* Essential for positioning the overlay and content */
+    width: 100%;
+    height: 80vh; /* Set a consistent height, adjust as desired (e.g., 50-70vh) */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the background image */
+    display: flex;
+    align-items: center; /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    color: var(--white); /* White text for strong contrast against the dark background/overlay */
+    text-align: center;
+    overflow: hidden; /* Prevents any image overflow */
+    margin-top: 80px;
+  }
+  
+  .rooms-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* Semi-transparent dark overlay for text readability */
+    z-index: 1; /* Ensures the overlay is above the background image */
+  }
+  
+  .rooms-hero-content {
+    position: relative; /* Positions content above the overlay */
+    z-index: 2; /* Ensures content is visible above the overlay */
+    max-width: 900px; /* Limits the width of the text content for better readability */
+    padding: 0 1.5rem; /* Horizontal padding to prevent text from touching edges */
+  }
+  
+  .rooms-hero-headline {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Bold weight for impact */
+    font-size: 3.5rem; /* Large headline size */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Adds depth and readability to text */
+  }
+  
+  .rooms-hero-subheadline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for subheadline */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  
+  @media (max-width: 1024px) {
+    .rooms-hero-section {
+      height: 55vh; /* Slightly smaller height on tablet screens */
+    }
+    .rooms-hero-headline {
+      font-size: 3rem; /* Adjust headline size for tablets */
+    }
+    .rooms-hero-subheadline {
+      font-size: 1.2rem; /* Adjust subheadline size for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rooms-hero-section {
+      height: 50vh; /* Further adjust height for mobile */
+    }
+    .rooms-hero-headline {
+      font-size: 2.5rem; /* Adjust headline size for mobile */
+    }
+    .rooms-hero-subheadline {
+      font-size: 1.1rem; /* Adjust subheadline size for mobile */
+    }
+    .rooms-hero-content {
+      padding: 0 1rem; /* Reduce horizontal padding on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .rooms-hero-section {
+      height: 45vh; /* Smallest height for very small screens */
+    }
+    .rooms-hero-headline {
+      font-size: 2rem; /* Smallest headline size */
+    }
+    .rooms-hero-subheadline {
+      font-size: 1rem; /* Smallest subheadline size */
+    }
+  }

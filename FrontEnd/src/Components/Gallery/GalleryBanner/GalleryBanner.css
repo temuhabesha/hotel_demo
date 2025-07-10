@@ -1,0 +1,109 @@
+/* GalleryBanner.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .gallery-banner {
+    position: relative;
+    width: 100%;
+    /* Slightly shorter than RoomsHeroSection as it's a gallery intro, not primary sales */
+    height: 50vh; 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+    /* Apply blur directly to the background container for the blurred effect */
+    filter: blur(2px); /* Adjust blur intensity as needed */
+    transform: scale(1.02); /* Counteract blur shrinkage if noticeable */
+  }
+  
+  /* Overlay for text readability on top of blurred image */
+  .gallery-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); /* Slightly lighter overlay than hero section due to blur */
+    z-index: 1;
+    filter: blur(0); /* Ensure overlay itself is not blurred */
+    transform: scale(1); /* Ensure overlay itself is not scaled */
+  }
+  
+  /* Content needs to be separate from the blurred element to remain sharp */
+  .gallery-banner-content {
+    position: absolute; /* Position relative to .gallery-banner-container, not the blurred element */
+    z-index: 2; /* Ensures content is above the overlay */
+    max-width: 800px;
+    padding: 0 1.5rem;
+    /* Remove blur from content */
+    filter: blur(0); 
+  }
+  
+  .gallery-banner-headline {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .gallery-banner-subheadline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 1024px) {
+    .gallery-banner {
+      height: 45vh;
+    }
+    .gallery-banner-headline {
+      font-size: 2.8rem;
+    }
+    .gallery-banner-subheadline {
+      font-size: 1.15rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-banner {
+      height: 40vh;
+    }
+    .gallery-banner-headline {
+      font-size: 2.2rem;
+    }
+    .gallery-banner-subheadline {
+      font-size: 1rem;
+    }
+    .gallery-banner-content {
+      padding: 0 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-banner {
+      height: 35vh;
+    }
+    .gallery-banner-headline {
+      font-size: 1.8rem;
+    }
+    .gallery-banner-subheadline {
+      font-size: 0.9rem;
+    }
+  }

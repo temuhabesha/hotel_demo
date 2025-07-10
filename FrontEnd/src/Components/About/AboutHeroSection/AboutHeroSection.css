@@ -13,7 +13,7 @@
   .about-hero-section {
     position: relative; /* For overlay positioning */
     width: 100%;
-    height: 60vh; /* Adjust height as needed, e.g., 60vh for a slightly smaller hero than homepage */
+    height: 80vh; /* Adjust height as needed, e.g., 60vh for a slightly smaller hero than homepage */
     background-size: cover; /* Cover the entire area */
     background-position: center; /* Center the image */
     display: flex;

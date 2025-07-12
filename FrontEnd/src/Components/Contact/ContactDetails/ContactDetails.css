@@ -1,0 +1,198 @@
+/* ContactDetails.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+  --primary-blue: #1E3A8A;
+  --accent-yellow: #FACC15;
+  --background-light-gray: #F8FAFC;
+  --text-dark-gray: #1F2937;
+  --secondary-light-gray: #E5E7EB;
+  --white: #FFFFFF;
+}
+
+.contact-details-section {
+  background-color: var(--background-light-gray); /* Light gray background to distinguish */
+  padding: 5rem 0;
+  text-align: center; /* Center the heading and subheading */
+}
+
+.contact-details-container {
+  max-width: 1200px; /* Consistent max width */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2.8rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.8rem;
+}
+
+.section-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: var(--text-dark-gray);
+  margin-bottom: 3rem; /* Space before the grid starts */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible columns, 2-3 per row */
+  gap: 2.5rem; /* Space between contact items */
+  text-align: left; /* Align text within each item to the left */
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start; /* Align icon and content at the top */
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-item.full-width {
+  grid-column: 1 / -1; /* Make operating hours span all columns */
+  justify-content: center; /* Center content if it's full width */
+  text-align: center;
+}
+
+
+.detail-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.detail-icon {
+  font-size: 2.5rem; /* Large icon size */
+  color: var(--primary-blue); /* Brand blue for icons */
+  margin-right: 1.2rem;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  line-height: 1; /* Remove extra line height */
+}
+
+.detail-content {
+  flex-grow: 1; /* Allow content to take available space */
+}
+
+.detail-content h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.detail-link,
+.detail-text,
+.detail-address {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: var(--text-dark-gray);
+  text-decoration: none; /* Remove underline from links */
+  line-height: 1.5;
+  display: block; /* Ensure links take full width */
+}
+
+.detail-link:hover {
+  color: var(--accent-yellow); /* Accent color on hover for links */
+}
+
+.detail-address {
+  font-style: normal; /* Remove italic from address tag */
+}
+
+.detail-link.map-link {
+  margin-top: 0.5rem; /* Space above "View on Map" link */
+  font-weight: 500;
+  color: var(--primary-blue);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .section-heading {
+    font-size: 2.4rem;
+  }
+  .section-subheading {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+  }
+  .details-grid {
+    gap: 2rem;
+  }
+  .detail-item {
+    padding: 1.8rem;
+  }
+  .detail-icon {
+    font-size: 2.2rem;
+    margin-right: 1rem;
+  }
+  .detail-content h3 {
+    font-size: 1.2rem;
+  }
+  .detail-link,
+  .detail-text,
+  .detail-address {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-details-section {
+    padding: 4rem 0;
+  }
+  .contact-details-container {
+    padding: 0 1.5rem;
+  }
+  .section-heading {
+    font-size: 2.2rem;
+  }
+  .section-subheading {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .details-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+  }
+  .detail-item {
+    padding: 1.5rem;
+  }
+  .detail-icon {
+    font-size: 2rem;
+    margin-right: 0.8rem;
+  }
+  .detail-content h3 {
+    font-size: 1.1rem;
+  }
+  .detail-link,
+  .detail-text,
+  .detail-address {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-item {
+    padding: 1.2rem;
+  }
+  .detail-icon {
+    font-size: 1.8rem;
+  }
+  .detail-content h3 {
+    font-size: 1rem;
+  }
+  .detail-link,
+  .detail-text,
+  .detail-address {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,120 @@
+/* ContactCTA.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+  --primary-blue: #1E3A8A;
+  --accent-yellow: #FACC15;
+  --background-light-gray: #F8FAFC;
+  --text-dark-gray: #1F2937;
+  --secondary-light-gray: #E5E7EB;
+  --white: #FFFFFF;
+}
+
+.contact-cta-section {
+  background-color: var(--white); /* Typically a lighter background */
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.contact-cta-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-cta-headline {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.contact-cta-subheadline {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  color: var(--text-dark-gray);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.contact-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Space between buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.contact-cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.contact-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-cta-button.whatsapp-button {
+  background-color: #25D366; /* WhatsApp green */
+  color: var(--white);
+}
+
+.contact-cta-button.whatsapp-button:hover {
+  background-color: #1DA851;
+}
+
+.contact-cta-button.booking-button {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.contact-cta-button.booking-button:hover {
+  background-color: #1D4ED8;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .contact-cta-headline {
+    font-size: 2.4rem;
+  }
+  .contact-cta-subheadline {
+    font-size: 1rem;
+  }
+  .contact-cta-buttons {
+    gap: 1rem;
+  }
+  .contact-cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cta-headline {
+    font-size: 2rem;
+  }
+  .contact-cta-subheadline {
+    font-size: 0.9rem;
+  }
+  .contact-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .contact-cta-button {
+    width: 80%;
+    max-width: 280px; /* Limit width even if full column */
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

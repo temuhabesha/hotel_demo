@@ -14,7 +14,7 @@
     position: relative;
     width: 100%;
     /* Slightly shorter than RoomsHeroSection as it's a gallery intro, not primary sales */
-    height: 50vh; 
+    height: 80vh; 
     background-size: cover;
     background-position: center;
     display: flex;
@@ -26,6 +26,7 @@
     /* Apply blur directly to the background container for the blurred effect */
     filter: blur(2px); /* Adjust blur intensity as needed */
     transform: scale(1.02); /* Counteract blur shrinkage if noticeable */
+    margin-top: 80px;
   }
   
   /* Overlay for text readability on top of blurred image */

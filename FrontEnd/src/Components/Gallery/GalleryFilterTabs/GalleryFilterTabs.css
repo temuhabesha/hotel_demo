@@ -1,0 +1,101 @@
+/* GalleryFilterTabs.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .gallery-filter-tabs-container {
+    background-color: var(--background-light-gray); /* Light gray background to separate from banner */
+    padding: 2.5rem 0; /* Vertical padding */
+    border-bottom: 1px solid var(--secondary-light-gray); /* Subtle separator */
+  }
+  
+  .filter-tabs-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0 auto; /* Center the list */
+    max-width: 1000px; /* Max width for tabs container */
+    display: flex;
+    flex-wrap: wrap; /* Allow tabs to wrap to next line on smaller screens */
+    justify-content: center; /* Center tabs horizontally */
+    gap: 0.75rem; /* Space between tab buttons */
+    padding: 0 1.5rem; /* Horizontal padding for smaller screens */
+  }
+  
+  .filter-tab-button {
+    background-color: var(--secondary-light-gray); /* Default light gray background */
+    color: var(--text-dark-gray);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem; /* Rounded corners for buttons */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap; /* Prevent text wrapping inside buttons */
+  }
+  
+  .filter-tab-button:hover {
+    background-color: var(--primary-blue); /* Primary blue on hover */
+    color: var(--white); /* White text on hover */
+    transform: translateY(-2px); /* Slight lift */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-tab-button.active {
+    background-color: var(--primary-blue); /* Active tab uses primary blue */
+    color: var(--accent-yellow); /* Accent yellow text for active tab */
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(0); /* Ensure active tab doesn't lift, stays "pressed" */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 1024px) {
+    .gallery-filter-tabs-container {
+      padding: 2rem 0;
+    }
+    .filter-tabs-list {
+      gap: 0.6rem;
+    }
+    .filter-tab-button {
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-filter-tabs-container {
+      padding: 1.5rem 0;
+    }
+    .filter-tabs-list {
+      flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0 1rem;
+    }
+    .filter-tab-button {
+      padding: 0.6rem 1rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-filter-tabs-container {
+      padding: 1rem 0;
+    }
+    .filter-tabs-list {
+      gap: 0.4rem;
+    }
+    .filter-tab-button {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.85rem;
+    }
+  }

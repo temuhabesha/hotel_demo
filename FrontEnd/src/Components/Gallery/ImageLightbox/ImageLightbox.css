@@ -1,0 +1,128 @@
+/* ImageLightbox.css */
+
+/* --- Brand Colors (re-used from root/Header.css variables) --- */
+:root {
+    --primary-blue: #1E3A8A;
+    --accent-yellow: #FACC15;
+    --background-light-gray: #F8FAFC;
+    --text-dark-gray: #1F2937;
+    --secondary-light-gray: #E5E7EB;
+    --white: #FFFFFF;
+  }
+  
+  .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100; /* Higher than modal */
+  }
+  
+  .lightbox-modal {
+    position: relative;
+    background-color: var(--white);
+    border-radius: 0.75rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+    padding: 2rem;
+  }
+  
+  .lightbox-close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--text-dark-gray);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 1200; /* Above navigation buttons */
+  }
+  
+  .lightbox-close-button:hover {
+    color: var(--primary-blue);
+  }
+  
+  .lightbox-image {
+    display: block;
+    max-width: 100%;
+    max-height: 75vh;
+    margin: 0 auto;
+    object-fit: contain; /* Prevent cropping */
+  }
+  
+  .lightbox-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 1200; /* Ensure they are above the image */
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+  
+  .lightbox-nav-button:hover {
+    opacity: 1;
+  }
+  
+  .lightbox-nav-button.prev {
+    left: 1rem;
+  }
+  
+  .lightbox-nav-button.next {
+    right: 1rem;
+  }
+  
+  .lightbox-caption {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--background-light-gray);
+    border-radius: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark-gray);
+    text-align: center;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .lightbox-modal {
+      padding: 1.5rem;
+    }
+    .lightbox-close-button {
+      font-size: 2rem;
+      top: 0.5rem;
+      right: 0.5rem;
+    }
+    .lightbox-nav-button {
+      font-size: 1.5rem;
+    }
+    .lightbox-caption {
+      font-size: 0.9rem;
+      padding: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .lightbox-modal {
+      padding: 1rem;
+    }
+    .lightbox-nav-button {
+      font-size: 1.2rem;
+    }
+    .lightbox-caption {
+      font-size: 0.85rem;
+    }
+  }

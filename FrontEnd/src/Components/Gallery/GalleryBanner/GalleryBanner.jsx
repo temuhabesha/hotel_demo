@@ -1,12 +1,12 @@
 import React from "react";
 import "./GalleryBanner.css"; // Link to its specific CSS file
+import backgroundImage from '../../../assets/Image/gallary9.jpg'
 
 const GalleryBanner = () => {
   // Use a high-quality, inviting image for the gallery banner.
   // This could be a soft-focus shot of your lobby, garden, or a general inviting scene.
   // Replace this URL with an actual image path from your project or a CDN.
-  const backgroundImage =
-    "https://images.unsplash.com/photo-1549488880-9b4369e9a48d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  
   // Example: A cozy hotel lounge or a serene garden area.
 
   return (
